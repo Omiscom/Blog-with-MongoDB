@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+
+   <h1>Home</h1>
+   <p>
+      <%= homeStartingContent %>
+   </p>
+
+
+
+   <div class="card">
+      <div class="card-body">
+         <!-- for each loop -->
+         <% posts.forEach(function(post){ %>
+            <h1>
+               <%= post.title.substring(0, 100) %>
+            </h1>
+            <p>
+               <%= post.content.substring(0, 100) + "..." %><a href="/posts/<%= post._id %>">Read More</a>
+            </p>
+            <%}); %>
+      </div>
+   </div>
+
+ <%- include("partials/footer"); -%>
+
+
+
+      <!-- for loop  -->
+      <!-- for (var i = 0; i < posts.length; i++) {
+  // posts[i].title 
+  // posts[i].content }; 
